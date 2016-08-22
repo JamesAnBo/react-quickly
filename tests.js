@@ -10,6 +10,14 @@ test('can add to count', reducerTest(
     'add to count should add one'
 ))
 
+test('can subtract count', reducerTest(
+    reducer,
+    {count:1},
+    function(){return {type: 'SUBTRACT_FROM_COUNT'}},
+    {count:0},
+    'add to count should subtract one'
+))
+
 
 
 
