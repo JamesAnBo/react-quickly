@@ -1,12 +1,16 @@
-import clone from 'clone'
+var clone = require('clone')
+const initialState = {count:0}
 
-export default (state = {count:0}, action) => {
+const shopping = (state, action) => {
+  state = state || initialState
   let newState = clone(state)
 
   switch (action.type) {
     case 'ADD_TO_COUNT':
       newState.count++
       return newState
+
+    // case 'ADD_TO_TROLLEY'
 
     case 'SUBTRACT_FROM_COUNT':
       newState.count--
@@ -16,3 +20,5 @@ export default (state = {count:0}, action) => {
       return state
   }
 }
+
+module.exports = shopping
